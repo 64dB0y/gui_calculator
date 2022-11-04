@@ -1,31 +1,29 @@
 # gui_caculator
 
-One Paragraph of project description goes here
+This program is GUI calculator
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Just execute this python program :D
 
 ### Prerequisites
 
 to execute the calculator, PyQt5 must be installed.
 
-```
-Give examples
-```
+If your python environment is Anaconda Execute below command
+conda install -c anaconda pyqt
 
 ## Built With
 
-* [PyQt5](http://www.dropwizard.io/1.0.2/docs/) - The GUI framework used
-
+* [PyQt5](https://www.riverbankcomputing.com/software/pyqt/) - The GUI framework used
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/S3xyG4y/gui_calculator/blob/main/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **LWH** - *Initial work* - [LWH](https://github.com/S3xyG4y)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
