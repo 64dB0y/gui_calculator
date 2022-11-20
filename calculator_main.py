@@ -1,4 +1,5 @@
 import sys
+import numpy as np
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5 import uic
 
@@ -35,6 +36,9 @@ class MainWindow(QMainWindow, form_main):
         self.pushButton_divide.clicked.connect(self.divide)
         self.pushButton_equal.clicked.connect(self.equal)
         self.pushButton_percent.clicked.connect(self.percent)
+        self.pushButton_fraction.clicked.connect(self.fraction)
+        self.pushButton_square.clicked.connect(self.square)
+        self.pushButton_root.clicked.connect(self.root)
 
     def button_1(self):
         self.number("1")
@@ -118,6 +122,29 @@ class MainWindow(QMainWindow, form_main):
         ans = float(exist_text)*0.01
         self.lineEdit.setText(str(ans))
 
+    def fraction(self):
+        exist_text = self.lineEdit.text()
+        if ((exist_text[-1] == "+") | (exist_text[-1] == "-") | (exist_text[-1] == "*") | (exist_text[-1] == "/") | (exist_text[-1] == "%")):
+            self.lineEdit.setText(exist_text[:-1])
+        value = float(exist_text)
+        ans = np.power(value, -1)
+        self.lineEdit.setText(str(ans))
+
+    def square(self):
+        exist_text = self.lineEdit.text()
+        if ((exist_text[-1] == "+") | (exist_text[-1] == "-") | (exist_text[-1] == "*") | (exist_text[-1] == "/") | (exist_text[-1] == "%")):
+            self.lineEdit.setText(exist_text[:-1])
+        value = float(exist_text)
+        ans = np.power(value, 2)
+        self.lineEdit.setText(str(ans))
+
+    def root(self):
+        exist_text = self.lineEdit.text()
+        if ((exist_text[-1] == "+") | (exist_text[-1] == "-") | (exist_text[-1] == "*") | (exist_text[-1] == "/") | (exist_text[-1] == "%")):
+            self.lineEdit.setText(exist_text[:-1])
+        value = float(exist_text)
+        ans = np.power(value, 0.5)
+        self.lineEdit.setText(str(ans))
 
     def equal(self):
         exist_text = self.lineEdit.text()
@@ -129,7 +156,6 @@ class MainWindow(QMainWindow, form_main):
             self.lineEdit.setText(str(ans))
         except Exception as e:
             print(e)
-
 
 
 if __name__ == "__main__":
