@@ -25,7 +25,7 @@ class MainWindow(QMainWindow, form_main):
         self.pushButton_8.clicked.connect(self.button_8)
         self.pushButton_9.clicked.connect(self.button_9)
         self.pushButton_0.clicked.connect(self.button_0)
-        self.pushButton_00.clicked.connect(self.button_00)
+        self.pushButton_Negative_Positive.clicked.connect(self.Negative_Positive)
         self.pushButton_dot.clicked.connect(self.button_dot)
         self.pushButton_DEL.clicked.connect(self.del_num)
         self.pushButton_C.clicked.connect(self.clr_num)
@@ -70,8 +70,10 @@ class MainWindow(QMainWindow, form_main):
     def button_0(self):
         self.number("0")
 
-    def button_00(self):
-        self.number("00")
+    def Negative_Positive(self):
+        exist_text = self.lineEdit.text()
+        ans = float(exist_text) * (-1)
+        self.lineEdit.setText(str(ans))
 
     def button_dot(self):
         self.number(".")

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>423</width>
-    <height>617</height>
+    <width>405</width>
+    <height>629</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -37,8 +37,8 @@
           </property>
           <property name="font">
            <font>
-            <family>Agency FB</family>
-            <pointsize>10</pointsize>
+            <family>굴림</family>
+            <pointsize>20</pointsize>
            </font>
           </property>
           <property name="alignment">
@@ -299,7 +299,7 @@
         </widget>
        </item>
        <item row="5" column="0">
-        <widget class="QPushButton" name="pushButton_00">
+        <widget class="QPushButton" name="pushButton_Negative_Positive">
          <property name="minimumSize">
           <size>
            <width>70</width>
@@ -307,7 +307,7 @@
           </size>
          </property>
          <property name="text">
-          <string>00</string>
+          <string>+/-</string>
          </property>
         </widget>
        </item>
