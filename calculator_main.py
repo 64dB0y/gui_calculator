@@ -4,6 +4,10 @@ from PyQt5 import uic
 
 form_main = uic.loadUiType("calculator2.ui")[0]  # ui 파일 불러오기
 
+# Calculator state.
+READY = 0
+INPUT = 1
+
 
 class MainWindow(QMainWindow, form_main):
     def __init__(self):
@@ -13,7 +17,8 @@ class MainWindow(QMainWindow, form_main):
 
     def initUI(self):
         self.setupUi(self)
-        self.pushButton_1.clicked.connect(self.button_1)   # 버튼 클릭시 연결되는 함수
+
+        self.pushButton_1.clicked.connect(self.button_1)   # 버튼 클릭시 연결 되는 함수
         self.pushButton_2.clicked.connect(self.button_2)
         self.pushButton_3.clicked.connect(self.button_3)
         self.pushButton_4.clicked.connect(self.button_4)
@@ -24,9 +29,15 @@ class MainWindow(QMainWindow, form_main):
         self.pushButton_9.clicked.connect(self.button_9)
         self.pushButton_0.clicked.connect(self.button_0)
         self.pushButton_00.clicked.connect(self.button_00)
+        self.pushButton_dot.clicked.connect(self.button_dot)
         self.pushButton_DEL.clicked.connect(self.del_num)
         self.pushButton_C.clicked.connect(self.clr_num)
         self.pushButton_CE.clicked.connect(self.clr_num)
+        self.pushButton_plus.clicked.connect(self.plus)
+        self.pushButton_minus.clicked.connect(self.minus)
+        self.pushButton_mult.clicked.connect(self.multiple)
+        self.pushButton_divide.clicked.connect(self.divide)
+        self.pushButton_equal.clicked.connect(self.equal)
 
     def button_1(self):
         self.number("1")
@@ -61,6 +72,9 @@ class MainWindow(QMainWindow, form_main):
     def button_00(self):
         self.number("00")
 
+    def button_dot(self):
+        self.number(".")
+
     def number(self, num):
         exist_text = self.lineEdit.text()   # lineEdit값을 가져와서 exist_text에 저장
         self.lineEdit.setText(exist_text+num)   # 기존값 + 새로 입력된 값
@@ -72,10 +86,45 @@ class MainWindow(QMainWindow, form_main):
     def clr_num(self):
         exit_text = self.lineEdit.setText("")
 
+    def plus(self):
+        exist_text = self.lineEdit.text()
+        # 연산 기호가 여러개 입력되면 그 중 맨 마지막으로 입력 받은 기호만이 수행된다.
+        if((exist_text[-1]=="+")|(exist_text[-1]=="-")|(exist_text[-1]=="*")|(exist_text[-1]=="/")):
+            self.lineEdit.setText(exist_text[:-1])
+        self.number("+")
+
+    def minus(self):
+        exist_text = self.lineEdit.text()
+        # 연산 기호가 여러개 입력되면 그 중 맨 마지막으로 입력 받은 기호만이 수행된다.
+        if ((exist_text[-1] == "+") | (exist_text[-1] == "-") | (exist_text[-1] == "*") | (exist_text[-1] == "/")):
+            self.lineEdit.setText(exist_text[:-1])
+        self.number("-")
+
+    def multiple(self):
+        exist_text = self.lineEdit.text()
+        # 연산 기호가 여러개 입력되면 그 중 맨 마지막으로 입력 받은 기호만이 수행된다.
+        if ((exist_text[-1] == "+") | (exist_text[-1] == "-") | (exist_text[-1] == "*") | (exist_text[-1] == "/")):
+            self.lineEdit.setText(exist_text[:-1])
+        self.number("*")
+
+    def divide(self):
+        exist_text = self.lineEdit.text()
+        # 연산 기호가 여러개 입력되면 그 중 맨 마지막으로 입력 받은 기호만이 수행된다.
+        if ((exist_text[-1] == "+") | (exist_text[-1] == "-") | (exist_text[-1] == "*") | (exist_text[-1] == "/")):
+            self.lineEdit.setText(exist_text[:-1])
+        self.number("/")
+
+    def equal(self):
+        exist_text = self.lineEdit.text()
+
+        try:
+            ans = eval(exist_text)
+            self.lineEdit.setText(str(ans))
+        except Exception as e:
+            print(e)
 
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    win = MainWindow()
-
-    sys.exit(app.exec_())
+    window = MainWindow()
+    app.exec_()
