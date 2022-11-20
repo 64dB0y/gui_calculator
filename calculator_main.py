@@ -4,10 +4,6 @@ from PyQt5 import uic
 
 form_main = uic.loadUiType("calculator2.ui")[0]  # ui 파일 불러오기
 
-# Calculator state.
-READY = 0
-INPUT = 1
-
 
 class MainWindow(QMainWindow, form_main):
     def __init__(self):
@@ -38,6 +34,7 @@ class MainWindow(QMainWindow, form_main):
         self.pushButton_mult.clicked.connect(self.multiple)
         self.pushButton_divide.clicked.connect(self.divide)
         self.pushButton_equal.clicked.connect(self.equal)
+        self.pushButton_percent.clicked.connect(self.percent)
 
     def button_1(self):
         self.number("1")
@@ -89,39 +86,50 @@ class MainWindow(QMainWindow, form_main):
     def plus(self):
         exist_text = self.lineEdit.text()
         # 연산 기호가 여러개 입력되면 그 중 맨 마지막으로 입력 받은 기호만이 수행된다.
-        if((exist_text[-1]=="+")|(exist_text[-1]=="-")|(exist_text[-1]=="*")|(exist_text[-1]=="/")):
+        if((exist_text[-1]=="+")|(exist_text[-1]=="-")|(exist_text[-1]=="*")|(exist_text[-1]=="/") | (exist_text[-1] == "%")):
             self.lineEdit.setText(exist_text[:-1])
         self.number("+")
 
     def minus(self):
         exist_text = self.lineEdit.text()
         # 연산 기호가 여러개 입력되면 그 중 맨 마지막으로 입력 받은 기호만이 수행된다.
-        if ((exist_text[-1] == "+") | (exist_text[-1] == "-") | (exist_text[-1] == "*") | (exist_text[-1] == "/")):
+        if ((exist_text[-1] == "+") | (exist_text[-1] == "-") | (exist_text[-1] == "*") | (exist_text[-1] == "/") | (exist_text[-1] == "%")):
             self.lineEdit.setText(exist_text[:-1])
         self.number("-")
 
     def multiple(self):
         exist_text = self.lineEdit.text()
         # 연산 기호가 여러개 입력되면 그 중 맨 마지막으로 입력 받은 기호만이 수행된다.
-        if ((exist_text[-1] == "+") | (exist_text[-1] == "-") | (exist_text[-1] == "*") | (exist_text[-1] == "/")):
+        if ((exist_text[-1] == "+") | (exist_text[-1] == "-") | (exist_text[-1] == "*") | (exist_text[-1] == "/") | (exist_text[-1] == "%")):
             self.lineEdit.setText(exist_text[:-1])
         self.number("*")
 
     def divide(self):
         exist_text = self.lineEdit.text()
         # 연산 기호가 여러개 입력되면 그 중 맨 마지막으로 입력 받은 기호만이 수행된다.
-        if ((exist_text[-1] == "+") | (exist_text[-1] == "-") | (exist_text[-1] == "*") | (exist_text[-1] == "/")):
+        if ((exist_text[-1] == "+") | (exist_text[-1] == "-") | (exist_text[-1] == "*") | (exist_text[-1] == "/") | (exist_text[-1] == "%")):
             self.lineEdit.setText(exist_text[:-1])
         self.number("/")
 
+    def percent(self):
+        exist_text = self.lineEdit.text()
+        if ((exist_text[-1] == "+") | (exist_text[-1] == "-") | (exist_text[-1] == "*") | (exist_text[-1] == "/") | (exist_text[-1] == "%")):
+            self.lineEdit.setText(exist_text[:-1])
+        ans = float(exist_text)*0.01
+        self.lineEdit.setText(str(ans))
+
+
     def equal(self):
         exist_text = self.lineEdit.text()
-
+        if ((exist_text[-1] == "+") | (exist_text[-1] == "-") | (exist_text[-1] == "*") | (exist_text[-1] == "/") | (exist_text[-1] == "%")):
+            self.lineEdit.setText(exist_text[:-1])
+        self.number("=")
         try:
             ans = eval(exist_text)
             self.lineEdit.setText(str(ans))
         except Exception as e:
             print(e)
+
 
 
 if __name__ == "__main__":
