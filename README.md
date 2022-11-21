@@ -31,7 +31,7 @@ If your environment doesn't use anaconda you can download qt designer below link
 ## Built With
 
 * [PyQt5](https://www.riverbankcomputing.com/software/pyqt/) - The GUI framework used (calculator_main.py)
-* [PyQt5 designer](https://build-system.fman.io/qt-designer-download) - To create UI (calculator_main.py)
+* [PyQt5 designer](https://build-system.fman.io/qt-designer-download) - To create UI (calculator2.ui)
 * [numpy](https://numpy.org/) - for Arithmetical calculate (calculator_main.py)
 
 ## Contributing
