@@ -3,9 +3,8 @@
 This program is GUI calculator
 
 ## Getting Started
-Plz download .ui file and .py file
-then execute this python program :D
-It will show you a calculator
+* Plz download .ui file and .py file then execute this python program :D
+* It will show you a calculator
 
 ### Prerequisites
 
