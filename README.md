@@ -16,7 +16,7 @@ If you are not Anaconda Environment you should below command
 * pip install --upgrade pip
 * pip install pyqt5
 * pip install pyqt5-tools
-* pup install numpy
+* pip install numpy
 
 OR if your python environment is Anaconda Execute below command
 
