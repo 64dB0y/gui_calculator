@@ -3,12 +3,15 @@
 This program is GUI calculator
 
 ## Getting Started
-
-Just execute this python program :D
+Plz download .ui file and .py file
+then execute this python program :D
+It will show you a calculator
 
 ### Prerequisites
 
 To execute the calculator, (PyQt5, numpy) must be installed.
+
+
 If you are not Anaconda Environment you should below command
 
 pip install --upgrade pip
