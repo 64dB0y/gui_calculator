@@ -15,7 +15,9 @@ conda install -c anaconda pyqt
 
 ## Built With
 
-* [PyQt5](https://www.riverbankcomputing.com/software/pyqt/) - The GUI framework used
+* [PyQt5](https://www.riverbankcomputing.com/software/pyqt/) - The GUI framework used (calculator_main.py)
+* [PyQt5 designer](https://build-system.fman.io/qt-designer-download) - To create UI (calculator_main.py)
+* [numpy](https://numpy.org/) - for Arithmetical calculate (calculator_main.py)
 
 ## Contributing
 
