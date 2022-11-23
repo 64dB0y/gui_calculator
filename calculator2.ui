@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(245, 245, 245);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
@@ -38,7 +41,9 @@
           <property name="font">
            <font>
             <family>굴림</family>
-            <pointsize>20</pointsize>
+            <pointsize>24</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
            </font>
           </property>
           <property name="alignment">
@@ -59,6 +64,17 @@
            <height>60</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <family>굴림</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(194, 194, 194);</string>
+         </property>
          <property name="text">
           <string>C</string>
          </property>
@@ -71,6 +87,17 @@
            <width>70</width>
            <height>60</height>
           </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>굴림</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(194, 194, 194);</string>
          </property>
          <property name="text">
           <string>DEL</string>
@@ -85,6 +112,17 @@
            <height>60</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <family>굴림</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(194, 194, 194);</string>
+         </property>
          <property name="text">
           <string>1/x</string>
          </property>
@@ -97,6 +135,17 @@
            <width>70</width>
            <height>60</height>
           </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>굴림</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(194, 194, 194);</string>
          </property>
          <property name="text">
           <string>%</string>
@@ -111,6 +160,17 @@
            <height>60</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <family>굴림</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(194, 194, 194);</string>
+         </property>
          <property name="text">
           <string>CE</string>
          </property>
@@ -124,8 +184,19 @@
            <height>60</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <family>굴림</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(194, 194, 194);</string>
+         </property>
          <property name="text">
-          <string>X^2</string>
+          <string>x^2</string>
          </property>
         </widget>
        </item>
@@ -136,6 +207,17 @@
            <width>70</width>
            <height>60</height>
           </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>굴림</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(194, 194, 194);</string>
          </property>
          <property name="text">
           <string>√</string>
@@ -150,6 +232,17 @@
            <height>60</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <family>굴림</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(194, 194, 194);</string>
+         </property>
          <property name="text">
           <string>8</string>
          </property>
@@ -162,6 +255,17 @@
            <width>70</width>
            <height>60</height>
           </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>굴림</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(194, 194, 194);</string>
          </property>
          <property name="text">
           <string>7</string>
@@ -176,6 +280,17 @@
            <height>60</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <family>굴림</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(194, 194, 194);</string>
+         </property>
          <property name="text">
           <string>9</string>
          </property>
@@ -188,6 +303,17 @@
            <width>70</width>
            <height>60</height>
           </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>굴림</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(194, 194, 194);</string>
          </property>
          <property name="text">
           <string>/</string>
@@ -202,6 +328,17 @@
            <height>60</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <family>굴림</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(194, 194, 194);</string>
+         </property>
          <property name="text">
           <string>4</string>
          </property>
@@ -214,6 +351,17 @@
            <width>70</width>
            <height>60</height>
           </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>굴림</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(194, 194, 194);</string>
          </property>
          <property name="text">
           <string>x</string>
@@ -228,6 +376,17 @@
            <height>60</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <family>굴림</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(194, 194, 194);</string>
+         </property>
          <property name="text">
           <string>5</string>
          </property>
@@ -240,6 +399,17 @@
            <width>70</width>
            <height>60</height>
           </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>굴림</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(194, 194, 194);</string>
          </property>
          <property name="text">
           <string>6</string>
@@ -254,6 +424,17 @@
            <height>60</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <family>굴림</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(194, 194, 194);</string>
+         </property>
          <property name="text">
           <string>-</string>
          </property>
@@ -266,6 +447,18 @@
            <width>70</width>
            <height>60</height>
           </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>굴림</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+           <kerning>true</kerning>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(194, 194, 194);</string>
          </property>
          <property name="text">
           <string>2</string>
@@ -280,6 +473,17 @@
            <height>60</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <family>굴림</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(194, 194, 194);</string>
+         </property>
          <property name="text">
           <string>1</string>
          </property>
@@ -293,18 +497,40 @@
            <height>60</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <family>굴림</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(194, 194, 194);</string>
+         </property>
          <property name="text">
           <string>.</string>
          </property>
         </widget>
        </item>
        <item row="5" column="0">
-        <widget class="QPushButton" name="pushButton_Negative_Positive">
+        <widget class="QPushButton" name="pushButton_negative_positive">
          <property name="minimumSize">
           <size>
            <width>70</width>
            <height>60</height>
           </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>굴림</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(194, 194, 194);</string>
          </property>
          <property name="text">
           <string>+/-</string>
@@ -319,6 +545,17 @@
            <height>60</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <family>굴림</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(194, 194, 194);</string>
+         </property>
          <property name="text">
           <string>+</string>
          </property>
@@ -331,6 +568,17 @@
            <width>70</width>
            <height>60</height>
           </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>굴림</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(160, 235, 255);</string>
          </property>
          <property name="text">
           <string>=</string>
@@ -345,6 +593,17 @@
            <height>60</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <family>굴림</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(194, 194, 194);</string>
+         </property>
          <property name="text">
           <string>0</string>
          </property>
@@ -357,6 +616,17 @@
            <width>70</width>
            <height>60</height>
           </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>굴림</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(194, 194, 194);</string>
          </property>
          <property name="text">
           <string>3</string>
