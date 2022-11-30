@@ -119,7 +119,7 @@ class MainWindow(QMainWindow, form_main):
         self.lineEdit.setText("")  # 부호를 입력 받은 순간 기존에 입력 받아 뒀던 숫자는 가린다
         global temp_operator
         temp_operator = "+"
-        self.lineEdit.setText(temp_operator)
+        #self.lineEdit.setText(temp_operator)
 
     def minus(self):
         exist_text = self.lineEdit.text()
@@ -132,7 +132,7 @@ class MainWindow(QMainWindow, form_main):
         self.lineEdit.setText("")  # 부호를 입력 받은 순간 기존에 입력 받아 뒀던 숫자는 가린다
         global temp_operator
         temp_operator = "-"
-        self.lineEdit.setText(temp_operator)
+        #self.lineEdit.setText(temp_operator)
 
     def multiple(self):
         exist_text = self.lineEdit.text()
@@ -145,7 +145,7 @@ class MainWindow(QMainWindow, form_main):
         self.lineEdit.setText("")  # 부호를 입력 받은 순간 기존에 입력 받아 뒀던 숫자는 가린다
         global temp_operator
         temp_operator = "*"
-        self.lineEdit.setText(temp_operator)
+        #self.lineEdit.setText(temp_operator)
 
     def divide(self):
         exist_text = self.lineEdit.text()
@@ -158,7 +158,7 @@ class MainWindow(QMainWindow, form_main):
         self.lineEdit.setText("")  # 부호를 입력 받은 순간 기존에 입력 받아 뒀던 숫자는 가린다
         global temp_operator
         temp_operator = "/"
-        self.lineEdit.setText(temp_operator)
+        #self.lineEdit.setText(temp_operator)
 
     def percent(self):
         exist_text = self.lineEdit.text()
