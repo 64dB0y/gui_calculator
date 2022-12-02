@@ -1,7 +1,6 @@
 ## Contributing
 
-First off, thank you for considering contributing to gui_calculator. It's people
-like you that make gui_calculator such a great tool.
+First off, thank you for considering contributing to gui_calculator. Our aim to make gui_calculator look the same with windows calculator(standard)
 
 ### Where do I go from here?
 
@@ -10,7 +9,7 @@ generally best if you get confirmation of your bug or approval for your feature
 request this way before starting to code.
 
 If you have a general question about gui_calculator, you can post it on [Stack
-Overflow], the issue tracker is only for bugs and feature requests.
+Overflow], the issue tracker is only for bugs, design and feature requests. (eg. exception handling or change button color)
 
 ### Fork & create a branch
 
@@ -25,26 +24,18 @@ git checkout -b 001-add-calculator-function
 
 ### Get the test suite running
 
-Make sure you're using a recent ruby and have the `bundler` gem installed, at
-least version `1.0.2`.
-
-You'll also need chrome installed in order to run cucumber scenarios.
-
-Now install the development dependencies:
-
-```
-conda install -c anaconda pyqt
-```
+you can check this content on README.md
+https://github.com/S3xyG4y/gui_calculator/blob/main/README.md
 
 ### Implement your fix or feature
 
 At this point, you're ready to make your changes! Feel free to ask for help;
 everyone is a beginner at first :smile_cat:
 
-### View your changes in a Rails application
+### View your changes in this repository with (browser or command)
 
 gui_calculaotr is meant to be used by humans, not cucumbers. So make sure to take
-a look at your changes in a browser.
+a look at your changes in a browser or you can track it with command prompt
 
 
 ### Make a Pull Request
@@ -109,5 +100,3 @@ Maintainers need to do the following to push out a release:
 * Run one of `bin/rake release:prepare_{prerelease,prepatch,patch,preminor,minor,premajor,major}`, push the result and create a PR.
 * Review and merge the PR. The generated changelog in the PR should include all user visible changes you intend to ship.
 * Run `bin/rake release` from the target branch once the PR is merged.
-
-[pyqt]: https://www.riverbankcomputing.com/software/pyqt/
