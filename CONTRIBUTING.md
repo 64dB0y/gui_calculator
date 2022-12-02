@@ -16,10 +16,10 @@ Overflow], the issue tracker is only for bugs, design and feature requests. (eg.
 If this is something you think you can fix, then [fork gui_calculator] and create
 a branch with a descriptive name.
 
-A good branch name would be (where issue #325 is the ticket you're working on):
+A good branch name would be (where issue #10 is the ticket you're working on):
 
 ```sh
-git checkout -b 001-add-calculator-function
+git checkout -b 010-add-calculator-function
 ```
 
 ### Get the test suite running
