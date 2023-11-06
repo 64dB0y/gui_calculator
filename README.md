@@ -18,6 +18,10 @@ If you are not Anaconda Environment you should below command
 * pip install pyqt5-tools
 * pip install numpy
 
+OR you can simply prepare your environment with
+
+pip install -r requirements.txt
+
 OR if your python environment is Anaconda Execute below command
 
 * conda update -n base conda
