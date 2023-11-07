@@ -45,7 +45,6 @@ class MainWindow(QMainWindow, form_main):
         self.pushButton_square.clicked.connect(self.square)
         self.pushButton_root.clicked.connect(self.root)
 
-
     def button_1(self):
         self.number("1")
 
