@@ -2,6 +2,8 @@ import sys
 import numpy as np
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5 import uic
+from PyQt5.QtGui import QKeyEvent
+from PyQt5.QtCore import Qt
 
 temp_operator = None
 temp_val1 = 0
@@ -48,7 +50,6 @@ class MainWindow(QMainWindow, form_main):
         self.pushButton_fraction.clicked.connect(self.fraction)
         self.pushButton_square.clicked.connect(self.square)
         self.pushButton_root.clicked.connect(self.root)
-
 
     def button_1(self):
         self.number("1")
@@ -303,6 +304,39 @@ class MainWindow(QMainWindow, form_main):
         if self.lineEdit.text() == "Error" or self.lineEdit.text() == "Error, cannot divide by zero":
             return True
         return False
+    
+    def handle_key(self, key: int) -> None:
+        match key:
+            # Numbers
+            case Qt.Key_0: self.pushButton_0.clicked.emit()
+            case Qt.Key_1: self.pushButton_1.clicked.emit()
+            case Qt.Key_2: self.pushButton_2.clicked.emit()
+            case Qt.Key_3: self.pushButton_3.clicked.emit()
+            case Qt.Key_4: self.pushButton_4.clicked.emit()
+            case Qt.Key_5: self.pushButton_5.clicked.emit()
+            case Qt.Key_6: self.pushButton_6.clicked.emit()
+            case Qt.Key_7: self.pushButton_7.clicked.emit()
+            case Qt.Key_8: self.pushButton_8.clicked.emit()
+            case Qt.Key_9: self.pushButton_9.clicked.emit()
+
+            # Operators
+            case Qt.Key_plusminus: \
+                self.pushButton_negative_positive.clicked.emit()
+            case Qt.Key_Period: self.pushButton_dot.clicked.emit()
+            case Qt.Key_Backspace: self.pushButton_DEL.clicked.emit()
+            case Qt.Key_Plus: self.pushButton_plus.clicked.emit()
+            case Qt.Key_Minus: self.pushButton_minus.clicked.emit()
+            case Qt.Key_Asterisk: self.pushButton_mult.clicked.emit()
+            case Qt.Key_Slash: self.pushButton_divide.clicked.emit()
+            case Qt.Key_Equal: self.pushButton_equal.clicked.emit()
+            case Qt.Key_Enter: self.pushButton_equal.clicked.emit()
+            case Qt.Key_Percent: self.pushButton_percent.clicked.emit()
+            ## I'm interpreting Esc key as clear_everything
+            case Qt.Key_Escape: self.pushButton_CE.clicked.emit()
+
+    def keyReleaseEvent(self, event: QKeyEvent) -> None:
+        self.handle_key(event.key())
+        return super().keyReleaseEvent(event)
 
 
 if __name__ == "__main__":
