@@ -17,9 +17,9 @@ class MainWindow(QMainWindow, form_main):
         super().__init__()
         self.initUI()
         # A flag indicating whether the calculator is currently in an error state. It is set to True if an error occurs.
-        self.is_error = False   
+        self.is_error = False
         # A flag indicating whether a new input has started. It is set to True when the next input begins after pressing an operator button.
-        self.new_input_started = False  
+        self.new_input_started = False
         self.show()
 
     def initUI(self):
@@ -109,20 +109,28 @@ class MainWindow(QMainWindow, form_main):
                 self.lineEdit.setText(self.lineEdit.text() + ".")
 
     def number(self, num):
+        global temp_val1, temp_operator, temp_val2
+
         if self.check_for_error():  # Check if it is an error state
             self.lineEdit.setText(num)  # If it is an error state, display the currently entered number
             self.is_error = False  # Release error state
             return
 
-        if self.new_input_started:
-            self.lineEdit.setText('')
-            self.new_input_started = False
-
-        exist_text = self.lineEdit.text()
-        if exist_text == '0':  # If only '0' is currently displayed, replace it with the new number
+        if self.lineEdit.text() == str(temp_val1) and temp_operator and not self.new_input_started:
+            # If current display is result, clear and start new input
             self.lineEdit.setText(num)
+            temp_val1 = num  # Set the new number as operand1
+            self.new_input_started = True
         else:
-            self.lineEdit.setText(exist_text + num)  # if not, add num
+            if self.new_input_started:
+                self.lineEdit.setText('')
+                self.new_input_started = False
+
+            exist_text = self.lineEdit.text()
+            if exist_text == '0':  # If only '0' is currently displayed, replace it with the new number
+                self.lineEdit.setText(num)
+            else:
+                self.lineEdit.setText(exist_text + num)  # if not, add num
 
     def del_num(self):
         if self.is_error:
@@ -156,7 +164,6 @@ class MainWindow(QMainWindow, form_main):
         temp_val1 = exist_text
         temp_operator = "+"
 
-
     def minus(self):
         if self.is_error:
             return
@@ -172,7 +179,6 @@ class MainWindow(QMainWindow, form_main):
 
         temp_val1 = exist_text
         temp_operator = "-"
-
 
     def multiple(self):
         if self.is_error:
@@ -205,7 +211,6 @@ class MainWindow(QMainWindow, form_main):
 
         temp_val1 = exist_text
         temp_operator = "/"
-
 
     def percent(self):
         if self.is_error:
@@ -279,6 +284,8 @@ class MainWindow(QMainWindow, form_main):
         if not temp_val1 or not exist_text:  # Do not perform calculation if temp_val1 is not set or there is no current text.
             return
 
+        if not temp_val2:  # If an operator was previously entered but the second operand is missing
+            temp_val2 = temp_val1  # Use the first operand as the second operand
         try:
             if temp_operator == "+":
                 result = float(temp_val1) + float(exist_text)
@@ -293,6 +300,8 @@ class MainWindow(QMainWindow, form_main):
                     return
                 result = float(temp_val1) / float(exist_text)
 
+            self.new_input_started = True  # Set up for a new input after the calculation is complet
+
             temp_val1 = str(result)  # Store the result in temp_val1.
             self.lineEdit.setText(str(result))
             temp_operator = None
@@ -304,35 +313,55 @@ class MainWindow(QMainWindow, form_main):
         if self.lineEdit.text() == "Error" or self.lineEdit.text() == "Error, cannot divide by zero":
             return True
         return False
-    
+
     def handle_key(self, key: int) -> None:
         match key:
             # Numbers
-            case Qt.Key_0: self.pushButton_0.clicked.emit()
-            case Qt.Key_1: self.pushButton_1.clicked.emit()
-            case Qt.Key_2: self.pushButton_2.clicked.emit()
-            case Qt.Key_3: self.pushButton_3.clicked.emit()
-            case Qt.Key_4: self.pushButton_4.clicked.emit()
-            case Qt.Key_5: self.pushButton_5.clicked.emit()
-            case Qt.Key_6: self.pushButton_6.clicked.emit()
-            case Qt.Key_7: self.pushButton_7.clicked.emit()
-            case Qt.Key_8: self.pushButton_8.clicked.emit()
-            case Qt.Key_9: self.pushButton_9.clicked.emit()
+            case Qt.Key_0:
+                self.pushButton_0.clicked.emit()
+            case Qt.Key_1:
+                self.pushButton_1.clicked.emit()
+            case Qt.Key_2:
+                self.pushButton_2.clicked.emit()
+            case Qt.Key_3:
+                self.pushButton_3.clicked.emit()
+            case Qt.Key_4:
+                self.pushButton_4.clicked.emit()
+            case Qt.Key_5:
+                self.pushButton_5.clicked.emit()
+            case Qt.Key_6:
+                self.pushButton_6.clicked.emit()
+            case Qt.Key_7:
+                self.pushButton_7.clicked.emit()
+            case Qt.Key_8:
+                self.pushButton_8.clicked.emit()
+            case Qt.Key_9:
+                self.pushButton_9.clicked.emit()
 
             # Operators
             case Qt.Key_plusminus: \
                 self.pushButton_negative_positive.clicked.emit()
-            case Qt.Key_Period: self.pushButton_dot.clicked.emit()
-            case Qt.Key_Backspace: self.pushButton_DEL.clicked.emit()
-            case Qt.Key_Plus: self.pushButton_plus.clicked.emit()
-            case Qt.Key_Minus: self.pushButton_minus.clicked.emit()
-            case Qt.Key_Asterisk: self.pushButton_mult.clicked.emit()
-            case Qt.Key_Slash: self.pushButton_divide.clicked.emit()
-            case Qt.Key_Equal: self.pushButton_equal.clicked.emit()
-            case Qt.Key_Enter: self.pushButton_equal.clicked.emit()
-            case Qt.Key_Percent: self.pushButton_percent.clicked.emit()
+            case Qt.Key_Period:
+                self.pushButton_dot.clicked.emit()
+            case Qt.Key_Backspace:
+                self.pushButton_DEL.clicked.emit()
+            case Qt.Key_Plus:
+                self.pushButton_plus.clicked.emit()
+            case Qt.Key_Minus:
+                self.pushButton_minus.clicked.emit()
+            case Qt.Key_Asterisk:
+                self.pushButton_mult.clicked.emit()
+            case Qt.Key_Slash:
+                self.pushButton_divide.clicked.emit()
+            case Qt.Key_Equal:
+                self.pushButton_equal.clicked.emit()
+            case Qt.Key_Enter:
+                self.pushButton_equal.clicked.emit()
+            case Qt.Key_Percent:
+                self.pushButton_percent.clicked.emit()
             ## I'm interpreting Esc key as clear_everything
-            case Qt.Key_Escape: self.pushButton_CE.clicked.emit()
+            case Qt.Key_Escape:
+                self.pushButton_CE.clicked.emit()
 
     def keyReleaseEvent(self, event: QKeyEvent) -> None:
         self.handle_key(event.key())
